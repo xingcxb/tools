@@ -1,22 +1,15 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img id="logo" alt="Wails logo" src="./assets/images/logo-universal.png"/>
-  <HelloWorld/>
+  <el-row :span="7">
+    <Home />
+  </el-row>
+  <el-row :span="17">
+    <span>123456</span>
+  </el-row>
 </template>
 
+<script setup>
+import Home from './components/NavigatorMenu.vue'
+</script>
 <style>
-#logo {
-  display: block;
-  width: 50%;
-  height: 50%;
-  margin: auto;
-  padding: 10% 0 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-origin: content-box;
-}
+
 </style>
