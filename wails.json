@@ -1,4 +1,5 @@
 {
+  "$schema": "https://wails.io/schemas/config.v2.json",
   "name": "tools",
   "outputfilename": "tools",
   "frontend:install": "npm install",
