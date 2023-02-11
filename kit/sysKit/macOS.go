@@ -4,14 +4,29 @@ package sysKit
 import (
 	"fmt"
 	"github.com/dkorunic/iSMC/smc"
+	"github.com/shirou/gopsutil/cpu"
+	"github.com/shirou/gopsutil/mem"
+	"os"
+	"runtime"
 )
 
 const (
 	FanCount = "Fan Count" // 风扇个数
 )
 
+// OsInfo 获取系统信息
 func OsInfo() {
+	fmt.Println(mem.VirtualMemory())
+	fmt.Println(cpu.Info())
+	fmt.Println(runtime.GOOS)
+	fmt.Println(runtime.GOARCH)
+	fmt.Println(runtime.Version())
+	fmt.Println(os.Hostname())
+}
 
+// GetMacOSCpu 获取macOS CPU信息
+func GetMacOSCpu() {
+	fmt.Println(smc.GetCurrent())
 }
 
 // AllFansInfo 风扇所有信息
@@ -55,9 +70,4 @@ func GetMacOSFanSpeed() AllFansInfo {
 	}
 	allFansInfo.FanInfos = fansInfo
 	return allFansInfo
-}
-
-// GetMacOSCpu 获取macOSCPU信息
-func GetMacOSCpu() {
-	fmt.Println(smc.GetCurrent())
 }
